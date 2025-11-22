@@ -19,6 +19,16 @@
                 </div>
 
                 <div class="input-group">
+                    <label for="hoursWorked">Hours Worked (Optional)</label>
+                    <input type="number" id="hoursWorked" placeholder="Enter hours worked" step="0.01" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="customersServed">Customers Served (Optional)</label>
+                    <input type="number" id="customersServed" placeholder="Enter customers served" step="1" min="0">
+                </div>
+
+                <div class="input-group">
                     <label for="commissionRate">Commission Rate (%)</label>
                     <input type="number" id="commissionRate" value="3" placeholder="Enter commission rate" step="0.01" min="0">
                 </div>
@@ -29,19 +39,30 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="hoursWorked">Hours Worked (Optional)</label>
-                    <input type="number" id="hoursWorked" placeholder="Enter hours worked" step="0.01" min="0">
+                    <button type="button" id="servicePlansToggle" class="service-plans-btn">Include Service Plans</button>
                 </div>
 
-                <div class="input-group">
-                    <label for="customersServed">Customers Served (Optional)</label>
-                    <input type="number" id="customersServed" placeholder="Enter customers served" step="1" min="0">
+                <div id="servicePlansInputs" class="hidden">
+                    <div class="input-group">
+                        <label for="servicePlansRevenue">Service Plans Revenue ($)</label>
+                        <input type="number" id="servicePlansRevenue" placeholder="Enter service plans revenue" step="0.01" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="servicePlansAmount">Amount of Plans</label>
+                        <input type="number" id="servicePlansAmount" placeholder="Enter number of plans" step="1" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="salesCommissionRate">Sales Commission Rate (%)</label>
+                        <input type="number" id="salesCommissionRate" value="10" placeholder="Enter sales commission rate" step="0.01" min="0">
+                    </div>
                 </div>
             </div>
 
             <div class="results" id="results">
                 <div class="result-item" id="totalCommission">
-                    <span class="result-label">Total Commission:</span>
+                    <span class="result-label">Commission:</span>
                     <span class="result-value">$0.00</span>
                 </div>
                 <div class="result-item hidden" id="totalCombined">
@@ -49,7 +70,7 @@
                     <span class="result-value">$0.00</span>
                 </div>
                 <div class="result-item hidden" id="totalHourly">
-                    <span class="result-label">Total Hourly:</span>
+                    <span class="result-label">Hourly Earnings:</span>
                     <span class="result-value">$0.00</span>
                 </div>
                 <div class="result-item hidden" id="totalPerHour">
@@ -57,7 +78,15 @@
                     <span class="result-value">$0.00</span>
                 </div>
                 <div class="result-item hidden" id="totalPerCustomer">
-                    <span class="result-label">Total per Customer:</span>
+                    <span class="result-label">Commission per Customer:</span>
+                    <span class="result-value">$0.00</span>
+                </div>
+                <div class="result-item hidden service-plans-result" id="totalSalesCommission">
+                    <span class="result-label">Total Sales Commission:</span>
+                    <span class="result-value">$0.00</span>
+                </div>
+                <div class="result-item hidden service-plans-result" id="totalCommissionPerPlan">
+                    <span class="result-label">Commission Per Plan:</span>
                     <span class="result-value">$0.00</span>
                 </div>
             </div>
